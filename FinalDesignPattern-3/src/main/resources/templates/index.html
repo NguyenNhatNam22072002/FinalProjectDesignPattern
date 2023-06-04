@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Design Pattern Demo</title>
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 25px;
+            background-image: url('https://thumbs.gfycat.com/OptimisticSnivelingAmericanshorthair-size_restricted.gif');
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: cover;
+            color: #fff;
+            padding: 10px;
+            z-index: 999;
+        }
+        
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* CSS styles for the footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar-gif {
+            position: absolute;
+            right: 20px;
+            top: 49%;
+            transform: translateY(-50%);
+            width: 49px;
+            height: 49px;
+            background-image: url('https://media.tenor.com/P-8ZvqnS4AwAAAAM/dancing-cat-dancing-kitten.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main-content {
+            margin-top: 80px; /* Adjust the margin value to leave space for the navbar */
+            margin-bottom: 80px; /* Adjust the margin value to leave space for the footer */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            background-image: url('https://vip-go.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_1556534186.jpg?w=750');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #output {
+	        position: relative;
+	        background-color: #fff;
+	        color: #000;
+	        padding: 200px;
+	        border-radius: 4px;
+	        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	        margin-bottom: 20px;
+	        justify-content: flex-start;
+	    }
+
+	    #output .text {
+	        position: absolute;
+	        top: 10px;
+	        left: 10px;
+	    }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-gif"></div>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+    </div>
+    <div class="main-content">
+	    <h1>Final Design Pattern</h1>
+	    <div class="button-container">
+	        <button onclick="singletonPattern()">Singleton Pattern</button>
+	        <button onclick="factoryPattern()">Factory Pattern</button>
+	        <button onclick="dependencyInjectionPattern()">Dependency Injection Pattern</button>
+	        <button onclick="templateMethodPattern()">Template Method Pattern</button>
+	        <button onclick="observerPattern()">Observer Pattern</button>
+	        <button onclick="decoratorPattern()">Decorator Pattern</button>
+	        <button onclick="proxyPattern()">Proxy Pattern</button>
+	        <button onclick="strategyPattern()">Strategy Pattern</button>
+	        <button onclick="chainOfResponsibilityPattern()">Chain of Responsibility Pattern</button>
+	        <button onclick="commandPattern()">Command Pattern</button>
+	        <button onclick="facadePattern()">Facade Pattern</button>
+	        <button onclick="adapterPattern()">Adapter Pattern</button>
+	    </div>
+    
+	    <div id="output">
+	
+	    </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 20110523@student.hcmute.edu.vn | Website Final Design Pattern 2023.
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script th:inline="javascript">
+        /* JavaScript functions to call backend APIs and display pattern demonstration results */
+        
+        function displayResult(result) {
+    		$('#output').html('<div class="text">' + result + '</div>');
+		}		
+        
+        function singletonPattern() {
+            $.get('/singleton-pattern', displayResult);
+        }
+        
+        function factoryPattern() {
+            $.get('/factory-pattern', displayResult);
+        }
+        
+        function dependencyInjectionPattern() {
+            $.get('/dependency-injection-pattern', displayResult);
+        }
+        
+        function templateMethodPattern() {
+            $.get('/template-method-pattern', displayResult);
+        }
+        
+        function observerPattern() {
+            $.get('/observer-pattern', displayResult);
+        }
+        
+        function decoratorPattern() {
+            $.get('/decorator-pattern', displayResult);
+        }
+        
+        function proxyPattern() {
+            $.get('/proxy-pattern', displayResult);
+        }
+        
+        function strategyPattern() {
+            $.get('/strategy-pattern', displayResult);
+        }
+        
+        function chainOfResponsibilityPattern() {
+            $.get('/chain-of-responsibility-pattern', displayResult);
+        }
+        
+        function commandPattern() {
+            $.get('/command-pattern', displayResult);
+        }
+        
+        function facadePattern() {
+            $.get('/facade-pattern', displayResult);
+        }
+        
+        function adapterPattern() {
+            $.get('/adapter-pattern', displayResult);
+        }
+    </script>
+</body>
+</html>
